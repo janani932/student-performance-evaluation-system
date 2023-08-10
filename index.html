@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Menu</title>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .button {
+      background-color: blue;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin-top: 8px;
+     margin-right: 16px;
+     transform:translate(1150px);
+    }
+    body{
+   background-image:url("student.png");
+	 background-position: right;
+   background-repeat: no-repeat;
+   background-size: 1500px 800px;
+   }  
+   h1
+   {
+    text-align:center;
+    font-size:50px;
+    width:1200px;
+    color: white;
+   }
+    </style>
+</head>
+
+<body>
+  <nav>
+    <div class="sidebar-top">
+      <span class="shrink-btn">
+        <i class='bx bx-chevron-left'></i>
+      </span>
+      <img src="./img/logo.png" class="logo" alt="">
+     
+      <h3 class="hide">Dashboard</h3>
+    </div>
+    <div class="search">
+
+     
+    </div>
+
+    <div class="sidebar-links">
+      <ul>
+        <div class="active-tab"></div>
+         <li class="tooltip-element" data-tooltip="0">
+          <a href="s1.php"  class="active" data-active="0">
+            <div class="icon">
+               <i class='bx bx-user-pin'></i>
+              <i class='bx bxs-user-pin'></i>
+             
+            </div>
+          
+            <span class="link hide">Student Details</span>
+          </a>
+        </li>
+        <li class="tooltip-element" data-tooltip="1">
+          <a href="pdf.html" class="active" data-active="1">
+            <div class="icon">
+              <i class='bx bx-user'></i>
+              <i class='bx bxs-user'></i>
+            </div>
+          
+            <span class="link hide">Academic Points</span>
+          </a>
+        </li>
+        <li class="tooltip-element" data-tooltip="2">
+          <a href="ppt.php" data-active="2">
+            <div class="icon">
+              <i class='bx bx-folder'></i>
+              <i class='bx bxs-folder'></i>
+            </div>
+            <span class="link hide">Paper Presentation</span>
+          </a>
+        </li>
+        <li class="tooltip-element" data-tooltip="3">
+          <a href="lq.php" data-active="3">
+            <div class="icon">
+              <i class='bx bx-message-square-detail'></i>
+              <i class='bx bxs-message-square-detail'></i>
+            </div>
+            <span class="link hide">Leadership Qualities</span>
+          </a>
+        </li>
+        <li class="tooltip-element" data-tooltip="4">
+          <a href="project.php" data-active="4">
+            <div class="icon">
+              <i class='bx bx-bar-chart-square'></i>
+              <i class='bx bxs-bar-chart-square'></i>
+            </div>
+            <span class="link hide">Project work</span>
+          </a>
+        </li>
+          <li class="tooltip-element" data-tooltip="5">
+          <a href="game.php" data-active="5">
+            <div class="icon">
+              <i class='bx bx-tennis-ball'></i>
+              <i class='bx bxs-tennis-ball'></i>
+            </div>
+            <span class="link hide">Sports</span>
+          </a>
+        </li>
+        <li class="tooltip-element" data-tooltip="6">
+          <a href="logout.php" data-active="6">
+            <div class="icon">
+              <i class='bx bx-log-out'></i>
+              <i class='bx bxs-log-out'></i>
+            </div>
+            <span class="link hide">Logout</span>
+          </a>
+        </li>
+        <div class="tooltip">
+          <span class="show">Student Details</span>
+          <span>Academic Points</span>
+          <span>Paper Presentation</span>
+          <span>Leadership Qualities</span>
+          <span>Project work</span>
+          <span>Sports</span>
+          <span>Logout</span>
+        </div>
+      </ul>
+
+    
+  </nav>
+
+
+  <div class="box">
+    <div class="right-side" ><form action="logout.php">
+     <br><br><br></b><h1>WELCOME TO KONGU PORTAL</h1>
+      </div>
+    </div>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>

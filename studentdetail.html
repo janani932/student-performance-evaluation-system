@@ -1,0 +1,162 @@
+<?php 
+session_start();
+
+	include("connection.php");
+
+	if($_SERVER['REQUEST_METHOD'] == "POST")
+	{
+		//something was posted
+		$name = $_POST['name'];
+		$regno = $_POST['regno'];
+    	$email = $_POST['email'];
+    	$gender = $_POST['gender'];
+    	$dept = $_POST['dept'];
+    	$course = $_POST['course'];
+    	$phoneno = $_POST['phoneno'];
+
+		if(!empty($name) && !empty($regno) )
+		{
+
+			//save to database
+			
+			$query = "INSERT into studentdetail (name,regno,email,gender,dept,course,phoneno) VALUES ('$name','$regno', '$email','$gender','$dept','$course','$phoneno')";
+
+			mysqli_query($con, $query);
+
+			header("Location: index.html");
+			die;
+		}else
+		{
+			echo '<script>alert("Please enter valid details!")</script>';
+		}
+	}
+?>
+<html>
+  <head>
+  <script type="text/javascript" src="validate.js"></script>
+<style>
+  body{
+  background-color: aliceblue;
+    
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .container{
+
+ 		overflow: hidden;
+    width: 420px;
+
+    align-items:center;
+    padding: 15px;
+    position:absolute;
+    border-radius: 4px;
+    transform:translate(600px,100px);
+ 	}
+   #text{
+
+height: 40px;
+border-radius: 10px;
+}
+#button{
+padding: 10px;
+width: 100px;
+color: white;
+background-color:plum;
+border: none;
+}
+</style>  
+</head>
+  <body>
+  <div class="container">
+  <form action="index.html" name="StudentRegistration" onSubmit="return(validate());">
+<table cellpadding="3" width="100%" align="center" cellspacing="3" style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;">
+
+  <tr>
+  <td colspan=2>
+  <center><font size=10><b>Student Details</b></font></center><br>
+  </td>
+  </tr>
+<tr>
+  <td>
+    <font size=5>Name</font></td>
+  <td><input type=text name=textnames id="text" size="30" required></td>
+  </tr>
+<tr>
+
+  <td><font size=5>Register&nbsp;Number</font></td>
+
+  <td><input type="text" name="fathername" id="text"
+
+  size="30"></td>
+
+  </tr>
+  <tr>
+
+  <td><font size=5>Email&nbsp;Id</font></td>
+
+  <td><input type="text" name="emailid" id="text" size="30"></td>
+
+  </tr>
+<tr>
+
+  <td><font size=5>Sex</font></td>
+
+  <td><input type="radio" name="sex" value="male" size="20"><font size=4>Male</font>
+
+  <input type="radio" name="sex" value="Female" size="20"><font size=4>Female</font></td>
+
+  </tr>
+
+<tr>
+
+  <td><font size=5>Department</font></td>
+
+  <td><select type="text" name="Course" id="text" style="width: 235px;">
+
+  <option value="-1" selected>select..</option>
+
+  <option value="B.Tech">B.TECH</option>
+
+  <option value="MCA">MCA</option>
+
+  <option value="MBA">MBA</option>
+
+  <option value="BCA">BCA</option>
+
+  </select></td>
+
+  </tr>
+
+<tr>
+
+  <td><font size=5>Course</font></td>
+
+  <td><input type="text" name="course" id="text" size="30"></td>
+
+  </tr>
+
+<tr>
+
+  <td><font size=5>Mobile&nbsp;Number</font></td>
+
+  <td><input type="text" name="phoneno" id="text" size="30"></td>
+
+  </tr>
+<tr> <td><br></td></tr>
+  <tr>
+
+  <td><input type="reset" id="button" style = "position:fixed; left:80px; "></td>
+
+  <td colspan="2">
+   <!-- <form method="post" action="index.html">--><input type="submit" id="button" value="Submit Form" style = "position:fixed; left:300px; "></td>
+
+  </tr>
+
+  </table>
+
+  </form>
+  </div>
+
+  </body>
+
+  </html>
